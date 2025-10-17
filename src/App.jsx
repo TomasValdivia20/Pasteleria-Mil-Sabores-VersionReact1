@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/general.css";
 import { CarritoProvider } from "./context/CarritoContext";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Header from "./components/Header";  
+import Footer from "./components/Footer";  
 
 import Home from "./pages/Home";
 import Productos from "./pages/Productos";
@@ -18,7 +18,7 @@ function App() {
   return (
     <CarritoProvider>
       <Router>
-        <Navbar />
+        <Header />   
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />

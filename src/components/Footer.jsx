@@ -1,13 +1,13 @@
 import React from "react";
+import "../css/Footer.css";
 
-export default function Footer() {
+function Footer() {
   return (
-    <footer className="footer text-center text-light py-4 bg-dark mt-auto">
-      <div className="container">
-        <p className="mb-0 small">
-          © 2025 Pastelería Mil Sabores — Todos los derechos reservados.
-        </p>
-      </div>
+    <footer className="footer">
+      <p>© 2025 Pastelería Mil Sabores. Todos los derechos reservados.</p>
+      <p><a href="/contacto">Contáctanos</a></p>
     </footer>
   );
 }
+
+export default Footer;
