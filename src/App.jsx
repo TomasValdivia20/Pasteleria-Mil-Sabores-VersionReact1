@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/general.css";
+import { CarritoProvider } from "./context/CarritoContext";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Productos from "./pages/Productos";
+import Carrito from "./pages/Carrito";
+import Registro from "./pages/Registro";
+import Login from "./pages/Login";
+import ConfirmacionCompra from "./pages/ConfirmacionCompra";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <CarritoProvider>
+      <Router>
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/productos" element={<Productos />} />
+            <Route path="/carrito" element={<Carrito />} />
+            <Route path="/registro" element={<Registro />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/confirmacion" element={<ConfirmacionCompra />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </CarritoProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,30 @@
+{
+  "categorias": [
+    { "id": 1, "nombre": "Tortas Cuadradas", "descripcion": "Tortas de forma cuadrada", "cantidad": 2 },
+    { "id": 2, "nombre": "Tortas Circulares", "descripcion": "Tortas de forma circular", "cantidad": 2 },
+    { "id": 3, "nombre": "Postres Individuales", "descripcion": "Postres en porciones individuales", "cantidad": 2 },
+    { "id": 4, "nombre": "Pasteleria Tradicional", "descripcion": "Pasteleria chilena tradicional", "cantidad": 2 },
+    { "id": 5, "nombre": "Productos Sin Azucar", "descripcion": "Productos sin azúcar", "cantidad": 2 },
+    { "id": 6, "nombre": "Productos Sin Gluten", "descripcion": "Productos que no contienen gluten", "cantidad": 2 },
+    { "id": 7, "nombre": "Productos Veganos", "descripcion": "Productos de origen vegano", "cantidad": 2 },
+    { "id": 8, "nombre": "Productos Especiales", "descripcion": "Productos para ocasiones especiales", "cantidad": 2 }
+  ],
+  "productos": [
+    { "id": 1, "nombre": "Torta Red Velvet", "categoria": "Tortas Cuadradas", "descripcion": "Torta cuadrada de Red Velvet", "precio": "$35.000 - $40.000", "disponibilidad": "20/10" },
+    { "id": 2, "nombre": "Torta 'Cancha de futbol'", "categoria": "Tortas Cuadradas", "descripcion": "Torta cuadrada decorada como cancha de fútbol", "precio": "$35.000 - $40.000", "disponibilidad": "20/100" },
+    { "id": 3, "nombre": "Torta Nuez Manjar", "categoria": "Tortas Circulares", "descripcion": "Torta circular de nuez con manjar", "precio": "$35.000 - $60.000", "disponibilidad": "20/100" },
+    { "id": 4, "nombre": "Torta Panqueque Naranja", "categoria": "Tortas Circulares", "descripcion": "Torta circular de panqueques con naranja", "precio": "$35.000 - $60.000", "disponibilidad": "20/100" },
+    { "id": 5, "nombre": "Mousse de Chocolate", "categoria": "Postres Individuales", "descripcion": "Postre individual sabor chocolate", "precio": "$35.000 - $60.000", "disponibilidad": "0/50" },
+    { "id": 6, "nombre": "Mousse de Berries", "categoria": "Postres Individuales", "descripcion": "Postre individual sabor berries", "precio": "$35.000 - $60.000", "disponibilidad": "15/50" },
+    { "id": 7, "nombre": "Kuchen de Nuez", "categoria": "Productos Sin Azucar", "descripcion": "Kuchen sin azúcar de nuez", "precio": "$35.000 - $60.000", "disponibilidad": "20/50" },
+    { "id": 8, "nombre": "Kuchen de Almendras", "categoria": "Productos Sin Azucar", "descripcion": "Kuchen sin azúcar de almendras", "precio": "$35.000 - $60.000", "disponibilidad": "40/100" },
+    { "id": 9, "nombre": "Chilenitos (12 Unidades)", "categoria": "Pasteleria Tradicional", "descripcion": "Chilenitos en docena", "precio": "$12.000", "disponibilidad": "40/100" },
+    { "id": 10, "nombre": "Cachitos (12 Unidades)", "categoria": "Pasteleria Tradicional", "descripcion": "Cachitos chilenos en docena", "precio": "$12.000", "disponibilidad": "20/100" },
+    { "id": 11, "nombre": "Rollitos de Canela sin Gluten (12 Unidades)", "categoria": "Productos Sin Gluten", "descripcion": "Rollitos sin gluten", "precio": "$26.000", "disponibilidad": "18/20" },
+    { "id": 12, "nombre": "Kuchen de Nuez Keto sin Gluten", "categoria": "Productos Sin Gluten", "descripcion": "Kuchen keto sin gluten de nuez", "precio": "$20.000 - $32.000", "disponibilidad": "0/50" },
+    { "id": 13, "nombre": "Brownie Vegano", "categoria": "Productos Veganos", "descripcion": "Brownie vegano individual", "precio": "$6.000", "disponibilidad": "20/50" },
+    { "id": 14, "nombre": "Torta Vegana de Frambuesa y Chocolate", "categoria": "Productos Veganos", "descripcion": "Torta vegana con frambuesa y chocolate", "precio": "$35.000 - $60.000", "disponibilidad": "20/50" },
+    { "id": 15, "nombre": "Torta de Bodas 'Mil Sabores'", "categoria": "Productos Especiales", "descripcion": "Torta de bodas especial", "precio": "$55.000 - $100.000", "disponibilidad": "2/10" },
+    { "id": 16, "nombre": "Pan de Pascua", "categoria": "Productos Especiales", "descripcion": "Producto especial de temporada", "precio": "$15.000", "disponibilidad": "2/10" }
+  ]
+}
