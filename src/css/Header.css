@@ -127,3 +127,24 @@
 body, .main-content {
   padding-top: 150px; /* ajusta según el alto del header */
 }
+
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.logout-btn:hover {
+  color: #ffd700;
+}
+
+.header-greeting {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-right: 20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
