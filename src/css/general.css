@@ -11442,3 +11442,22 @@ body {
 h1, h2, h3, .titulo, .header-top h1 {
   font-family: 'Pacifico', cursive;
 }
+
+/* === Spinner de carga === */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: girar 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}

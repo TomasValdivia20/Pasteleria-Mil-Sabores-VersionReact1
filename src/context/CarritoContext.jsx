@@ -1,7 +1,6 @@
-// src/context/CarritoContext.jsx
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-const CarritoContext = createContext();
+export const CarritoContext = createContext(); // ✅ exportación directa
 
 export const CarritoProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
@@ -39,8 +38,8 @@ export const CarritoProvider = ({ children }) => {
   };
 
   const vaciarCarrito = () => {
-    setCarrito([]); // 👈 limpia el carrito
-    localStorage.removeItem("carrito"); // 👈 borra persistencia
+    setCarrito([]); // limpia el carrito
+    localStorage.removeItem("carrito"); // borra persistencia
   };
 
   return (
@@ -49,7 +48,7 @@ export const CarritoProvider = ({ children }) => {
         carrito,
         agregarAlCarrito,
         eliminarDelCarrito,
-        vaciarCarrito, 
+        vaciarCarrito,
       }}
     >
       {children}
@@ -57,4 +56,5 @@ export const CarritoProvider = ({ children }) => {
   );
 };
 
+// ✅ Hook personalizado (opcional)
 export const useCarrito = () => useContext(CarritoContext);

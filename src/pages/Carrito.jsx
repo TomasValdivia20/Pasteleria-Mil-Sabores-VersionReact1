@@ -1,46 +1,72 @@
-import React, { useContext } from "react";
-import { CarritoContext } from "../context/CarritoContext";
+// src/pages/Carrito.jsx
+import React from "react";
+import "../css/Carrito.css";
+import { useCarrito } from "../context/CarritoContext";
 
-function Carrito() {
-  const { carrito, eliminarDelCarrito, vaciarCarrito } = useContext(CarritoContext);
+export default function Carrito() {
+  const { carrito, eliminarDelCarrito, vaciarCarrito } = useCarrito();
 
-  const total = carrito.reduce(
-    (acc, producto) => acc + producto.precio * producto.cantidad,
-    0
-  );
-
-  if (!carrito || carrito.length === 0) {
-    return <p className="text-center mt-4">🛒 El carrito está vacío.</p>;
-  }
+  const calcularTotal = () => {
+    return carrito.reduce(
+      (acc, producto) => acc + producto.precio * producto.cantidad,
+      0
+    );
+  };
 
   return (
-    <div className="container mt-4">
-      <h2>🛍 Tu carrito</h2>
-      <ul className="list-group mb-3">
-        {carrito.map((producto) => (
-          <li key={producto.id} className="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <strong>{producto.nombre}</strong> x {producto.cantidad}
-            </div>
-            <div>
-              ${(producto.precio * producto.cantidad).toLocaleString()}
+    <div className="carrito-container">
+      <h2>🛒 Carrito de Compras</h2>
+
+      {carrito.length === 0 ? (
+        <p className="carrito-vacio">Tu carrito está vacío.</p>
+      ) : (
+        <>
+          <table className="carrito-tabla">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {carrito.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.nombre}</td>
+                  <td>${item.precio.toLocaleString()}</td>
+                  <td>{item.cantidad}</td>
+                  <td>${(item.precio * item.cantidad).toLocaleString()}</td>
+                  <td>
+                    <button
+                      className="btn-eliminar"
+                      onClick={() => eliminarDelCarrito(item.id)}
+                    >
+                      🗑️ Eliminar
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <div className="carrito-total">
+            <h3>Total: ${calcularTotal().toLocaleString()}</h3>
+            <div className="carrito-botones">
+              <button className="btn-vaciar" onClick={vaciarCarrito}>
+                Vaciar carrito
+              </button>
               <button
-                className="btn btn-danger btn-sm ms-3"
-                onClick={() => eliminarDelCarrito(producto.id)}
+                className="btn-comprar"
+                onClick={() => (window.location.href = "/confirmacion")}
               >
-                Eliminar
+                Confirmar compra
               </button>
             </div>
-          </li>
-        ))}
-      </ul>
-
-      <h4>Total: ${total.toLocaleString()}</h4>
-      <button className="btn btn-secondary mt-3" onClick={vaciarCarrito}>
-        Vaciar carrito
-      </button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
-
-export default Carrito;

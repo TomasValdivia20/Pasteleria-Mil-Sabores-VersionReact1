@@ -2,21 +2,23 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCarrito } from "../context/CarritoContext";
-import { useUser } from "../context/UserContext"; // 👈 usamos el nuevo contexto
+import { useUser } from "../context/UserContext";
 import "../css/Header.css";
 import "../css/general.css";
 import logo from "../assets/img/Logo.png";
 
-function Header() {
+export default function Header() {
   const { carrito, vaciarCarrito } = useCarrito();
-  const { usuario, logout } = useUser(); // 👈 datos y funciones del contexto
+  const { usuario, logout } = useUser();
   const navigate = useNavigate();
 
+  // 🔹 Calcular cantidad total de productos del carrito
   const cantidadTotal = carrito.reduce((acc, item) => acc + item.cantidad, 0);
 
+  // 🔹 Al cerrar sesión, limpiar sesión y carrito
   const handleLogout = () => {
-    logout(); // 👈 limpia sesión y localStorage
-    vaciarCarrito(); // Limpia el carrito
+    logout();
+    vaciarCarrito();
     navigate("/login");
   };
 
@@ -33,7 +35,7 @@ function Header() {
         </div>
       </div>
 
-      {/* Navbar */}
+      {/* === Barra de navegación principal === */}
       <nav className="header-navbar">
         <ul>
           <li><Link to="/">Inicio</Link></li>
@@ -41,9 +43,8 @@ function Header() {
           <li><Link to="/productos">Productos</Link></li>
           <li><Link to="/blog">Blog</Link></li>
           <li><Link to="/carrito">Carrito de Compras</Link></li>
-          <li><Link to="/registro">Registro</Link></li>
 
-          {/* Mostrar según sesión */}
+          {/* 🔹 Mostrar opciones según si el usuario está logueado */}
           {usuario ? (
             <>
               <li><Link to="/perfil">Mi Cuenta</Link></li>
@@ -54,13 +55,16 @@ function Header() {
               </li>
             </>
           ) : (
-            <li><Link to="/login">Iniciar Sesión</Link></li>
+            <>
+              <li><Link to="/registro">Registro</Link></li>
+              <li><Link to="/login">Iniciar Sesión</Link></li>
+            </>
           )}
 
           <li><Link to="/empleados">Empleados</Link></li>
         </ul>
 
-        {/* Carrito */}
+        {/* 🔹 Carrito visible en la parte derecha */}
         <div className="header-cart">
           <Link to="/carrito" className="cart-link">
             🛒 <span>({cantidadTotal})</span>
@@ -70,5 +74,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;
