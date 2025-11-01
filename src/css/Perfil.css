@@ -1,69 +1,42 @@
-/* src/css/ProductosList.css */
+.perfil-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
 
-.productos-page {
+.perfil-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 480px;
+  width: 100%;
   text-align: center;
-  background-color: #f6e1c5;
-  min-height: 100vh;
-  padding: 40px 20px;
 }
 
-.productos-header h2 {
-  background-color: #6b3b0e;
-  color: #ffcc00;
-  display: inline-block;
-  padding: 15px 30px;
-  border-radius: 15px;
-  font-size: 2rem;
-  margin-bottom: 10px;
+.perfil-card h2 {
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.productos-header p {
-  color: #5a3a22;
-  font-size: 1rem;
-  margin-bottom: 40px;
+.perfil-info p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #444;
 }
 
-.productos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  justify-items: center;
-}
-
-.producto-card {
-  background-color: #6b3b0e;
+.btn-logout {
+  margin-top: 20px;
+  background-color: #c0392b;
   color: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 340px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.producto-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
-}
-
-.producto-card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-}
-
-.producto-card h3 {
-  font-size: 1.3rem;
-  color: #ffcc00;
-  margin: 15px 0 5px;
-}
-
-.producto-card p {
-  margin: 0 15px 10px;
-}
-
-.producto-precio {
-  font-weight: bold;
-  color: #ffcc00;
-  margin-bottom: 15px;
+.btn-logout:hover {
+  background-color: #e74c3c;
 }

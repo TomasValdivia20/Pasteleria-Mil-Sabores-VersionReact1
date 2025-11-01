@@ -39,9 +39,9 @@ export default function Header() {
       <nav className="header-navbar">
         <ul>
           <li><Link to="/">Inicio</Link></li>
-          <li><Link to="/acerca">Acerca de Nosotros</Link></li>
+          <li><Link to="/acercadenosotros">Acerca de Nosotros</Link></li>
           <li><Link to="/productos">Productos</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/blogs">Blog</Link></li>
           <li><Link to="/carrito">Carrito de Compras</Link></li>
 
           {/* 🔹 Mostrar opciones según si el usuario está logueado */}
@@ -61,7 +61,7 @@ export default function Header() {
             </>
           )}
 
-          <li><Link to="/empleados">Empleados</Link></li>
+          <li><Link to="/backoffice">Empleados</Link></li>
         </ul>
 
         {/* 🔹 Carrito visible en la parte derecha */}
